@@ -171,6 +171,7 @@
   Template._configureLoginServiceDialog.events({
     'click .configure-login-service-dismiss-button': function () {
       loginButtonsSession.set('configureLoginServiceDialogVisible', false);
+      $('#configure-login-service-dialog-modal').modal('hide');
     },
     'click #configure-login-service-dialog-save-configuration': function () {
       if (loginButtonsSession.get('configureLoginServiceDialogVisible') &&
@@ -192,6 +193,7 @@
             Meteor._debug("Error configuring login service " + serviceName, error);
           else
             loginButtonsSession.set('configureLoginServiceDialogVisible', false);
+            $('#configure-login-service-dialog-modal').modal('hide');
         });
       }
     },
@@ -240,7 +242,7 @@
 
   Template._configureLoginServiceDialog.configurationSteps = function () {
     // renders the appropriate template
-    return configureLoginServiceDialogTemplateForService()();
+    return configureLoginServiceDialogTemplateForService();
   };
 
   Template._configureLoginServiceDialog.saveDisabled = function () {
