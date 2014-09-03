@@ -1,8 +1,11 @@
 Package.describe({
-	summary: "Bootstrap styled version of login widgets"
+	summary: "Bootstrap styled version of login widgets",
+  version: "0.3.10",
+  git: "https://github.com/rajit/meteor-accounts-ui-bootstrap-3.git"
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom("METEOR@0.9.0");
 	api.use(['session', 'handlebars', 'stylus', 'accounts-base', 'underscore', 'templating'], 'client');
 
 	api.add_files([

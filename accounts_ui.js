@@ -53,6 +53,9 @@ Accounts.ui.config = function(options) {
 				Accounts.ui._options.requestPermissions[service] = scope;
 			}
 		});
+    }
+
+    if (options.extraSignupFields) {
 		if (typeof options.extraSignupFields !== 'object' || !options.extraSignupFields instanceof Array) {
 			throw new Error("Accounts.ui.config: `extraSignupFields` must be an array.");
 		} else {
