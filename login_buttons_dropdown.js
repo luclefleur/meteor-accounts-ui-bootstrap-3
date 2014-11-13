@@ -67,6 +67,10 @@
 	  return Template._loginButtonsAdditionalLoggedInDropdownActions !== undefined;
 	};
 
+	Template._loginButtonsLoggedOutAllServices.additionalLoggedOutDropdownActions = function () {
+	  return Template._loginButtonsAdditionalLoggedOutDropdownActions !== undefined;
+	};
+
 	//
 	// loginButtonsLoggedOutDropdown template and related
 	//

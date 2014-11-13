@@ -26,10 +26,6 @@
 </template>
 
 <template name="_loginButtonsLoggedInDropdownActions">
-	{{#if additionalLoggedInDropdownActions}}
-		{{> _loginButtonsAdditionalLoggedInDropdownActions}}
-	{{/if}}
-
 	{{#if allowChangingPassword}}
 		<button class="btn btn-default btn-block" id="login-buttons-open-change-password">change password</button>
 	{{/if}}
@@ -50,6 +46,11 @@
 </template>
 
 <template name="_loginButtonsLoggedOutAllServices">
+
+	{{#if additionalLoggedOutDropdownActions}}
+		{{> _loginButtonsAdditionalLoggedOutDropdownActions}}
+	{{/if}}
+
 	{{#each services}}
 	{{#unless hasPasswordService}}
 		{{> _loginButtonsMessages}}
@@ -63,6 +64,8 @@
 			{{> _loginButtonsLoggedOutSingleLoginButton}}
 		{{/if}}
 	{{/each}}
+
+
 </template>
 
 <template name="_loginButtonsLoggedOutPasswordServiceSeparator">
